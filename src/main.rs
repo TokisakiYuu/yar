@@ -39,7 +39,7 @@ impl Component for Model {
         html! {
             <div>
                 <button onclick={ctx.link().callback(|_| Msg::ToSleep)}>{ "to sleep" }</button>
-                <p>{ self.content }</p>
+                <p>{ "status: " }{ self.content }</p>
             </div>
         }
     }
