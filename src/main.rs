@@ -1,13 +1,18 @@
+mod db;
+
 use yew::prelude::*;
 use gloo::timers::callback::Timeout;
 
 enum Msg {
     ToSleep,
-    SleepEnd
+    SleepEnd,
+    DBTest,
+    DBSetupComplete
 }
 
 struct Model {
     content: &'static str,
+    db_state: &'static str
 }
 
 impl Component for Model {
@@ -17,6 +22,7 @@ impl Component for Model {
     fn create(_ctx: &Context<Self>) -> Self {
         Self {
             content: "running",
+            db_state: "unsetup"
         }
     }
 
@@ -31,6 +37,17 @@ impl Component for Model {
             Msg::SleepEnd => {
                 self.content = "sleep end";
                 true
+            },
+            Msg::DBTest => {
+                ctx.link().send_future(async {
+                    db::db_test().await;
+                    Msg::DBSetupComplete
+                });
+                false
+            },
+            Msg::DBSetupComplete => {
+                self.db_state = "complete";
+                true
             }
         }
     }
@@ -40,6 +57,7 @@ impl Component for Model {
             <div>
                 <button onclick={ctx.link().callback(|_| Msg::ToSleep)}>{ "to sleep" }</button>
                 <p>{ "status: " }{ self.content }</p>
+                <button onclick={ctx.link().callback(|_| Msg::DBTest)}>{ "setup db" }</button>
             </div>
         }
     }
