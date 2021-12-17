@@ -34,6 +34,7 @@ pub async fn db_test() {
     let tx = db.transaction_on_one("my_store").unwrap();
     let store = tx.object_store("my_store").unwrap();
 
+    // TODO here got a None, i can not use unwrap skip this Option
     let value = store.get_owned("my_key").unwrap().await.unwrap().unwrap();
     
     println!("{}", value.as_string().unwrap());
