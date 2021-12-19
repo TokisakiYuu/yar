@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+  
+// global layout
+$headerHeight: 50px;
+$toolbarHeight: 50px;
+
+.main {
+  height: 100vh;
+  overflow-x: hidden;
+  .header,
+  .toolbar {
+    position: fixed;
+    width: 100%;
+  }
+  .header {
+    height: $headerHeight;
+    top: 0;
+    background-color: red;
+  }
+  .toolbar {
+    height: $toolbarHeight;
+    bottom: 0;
+    background-color: blue;
+  }
+  .content-wrapper {
+    height: inherit;
+    padding-top: $headerHeight;
+    padding-bottom: $toolbarHeight;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    .content {
+
+    }
+  }
+}

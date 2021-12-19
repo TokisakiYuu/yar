@@ -1,7 +1,12 @@
 mod db;
+mod components;
 
 use yew::prelude::*;
 use gloo::timers::callback::Timeout;
+use components::{
+    Ledger,
+    Header
+};
 
 enum Msg {
     ToSleep,
@@ -54,10 +59,17 @@ impl Component for Model {
 
     fn view(&self, ctx: &Context<Self>) -> Html {
         html! {
-            <div>
-                <button onclick={ctx.link().callback(|_| Msg::ToSleep)}>{ "to sleep" }</button>
-                <p>{ "status: " }{ self.content }</p>
-                <button onclick={ctx.link().callback(|_| Msg::DBTest)}>{ "setup db" }</button>
+            <div class="main">
+                <div class="header">
+                    <div>{ "title" }</div>
+                    <div>{ "dashboard" }</div>
+                </div>
+                <div class="content-wrapper">
+                    <div class="content">
+                        <Ledger />
+                    </div>
+                </div>
+                <div class="toolbar">{ "toolbar" }</div>
             </div>
         }
     }

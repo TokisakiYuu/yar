@@ -1,0 +1,33 @@
+@use 'variables' as vars;
+
+// ========= Ledger ==========
+.ledger {
+  .item-group + .item-group {
+    margin-top: 20px;
+  }
+}
+
+// ========= ItemGroup ==========
+.item-group {
+  .group-header {
+    display: flex;
+    padding: 0 vars.$contentHorizontalPadding;
+    color: gainsboro;
+    .title {
+      margin-right: auto;
+    }
+    .extra {
+      margin-left: auto;
+    }
+  }
+  .group-list {
+    padding: 0 vars.$contentHorizontalPadding;
+    .item {
+      border-bottom: 1px solid red;
+      box-sizing: border-box;
+      &:hover {
+        background-color: red;
+      }
+    }
+  }
+}
