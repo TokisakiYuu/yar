@@ -13,6 +13,9 @@
     display: flex;
     padding: 0 vars.$contentHorizontalPadding;
     color: gainsboro;
+    font-size: .9em;
+    line-height: 2.2em;
+    border-bottom: 1px solid rgb(205, 205, 205);
     .title {
       margin-right: auto;
     }
@@ -23,11 +26,15 @@
   .group-list {
     padding: 0 vars.$contentHorizontalPadding;
     .item {
-      border-bottom: 1px solid red;
+      border-bottom: 1px solid rgb(205, 205, 205);
       box-sizing: border-box;
+      line-height: 2.2em;
       &:hover {
-        background-color: red;
+        background-color: rgba(191, 191, 191, 0.548);
       }
     }
   }
 }
+
+
+
