@@ -5,7 +5,8 @@ use yew::prelude::*;
 use gloo::timers::callback::Timeout;
 use components::{
     Ledger,
-    Header
+    Header,
+    AddRecord
 };
 
 enum Msg {
@@ -69,7 +70,9 @@ impl Component for Model {
                         <Ledger />
                     </div>
                 </div>
-                <div class="toolbar">{ "toolbar" }</div>
+                <div class="toolbar">
+                    <AddRecord />
+                </div>
             </div>
         }
     }

@@ -1,9 +1,9 @@
 use yew::prelude::*;
-use super::ItemGroup;
+use super::Icon;
 
-pub struct Ledger {}
+pub struct AddRecord {}
 
-impl Component for Ledger {
+impl Component for AddRecord {
     type Message = ();
     type Properties = ();
 
@@ -17,12 +17,8 @@ impl Component for Ledger {
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
-            <div class="ledger">
-                <ItemGroup title="hello1" />
-                <ItemGroup title="hello2" />
-                <ItemGroup title="hello3" />
-                <ItemGroup title="hello4" />
-                <ItemGroup title="hello5" />
+            <div class="add-record">
+                <Icon name="add" width={30} height={30} />
             </div>
         }
     }

@@ -3,32 +3,36 @@
 // ========= Ledger ==========
 .ledger {
   .item-group + .item-group {
-    margin-top: 20px;
+    // margin-top: 20px;
   }
 }
 
 // ========= ItemGroup ==========
+$headerHeight: 3em;
 .item-group {
   .group-header {
     display: flex;
     padding: 0 vars.$contentHorizontalPadding;
-    color: gainsboro;
+    color: #b9b9b9;
     font-size: .9em;
-    line-height: 2.2em;
-    border-bottom: 1px solid rgb(205, 205, 205);
+    border-bottom: 1px solid #dfdfdf;
     .title {
       margin-right: auto;
+      line-height: $headerHeight;
     }
     .extra {
       margin-left: auto;
+      line-height: $headerHeight;
     }
   }
   .group-list {
-    padding: 0 vars.$contentHorizontalPadding;
     .item {
-      border-bottom: 1px solid rgb(205, 205, 205);
       box-sizing: border-box;
-      line-height: 2.2em;
+      padding: 0 vars.$contentHorizontalPadding;
+      .content {
+        line-height: 2.4em;
+        border-bottom: 1px solid #dfdfdf;
+      }
       &:hover {
         background-color: rgba(191, 191, 191, 0.548);
       }
@@ -36,5 +40,10 @@
   }
 }
 
-
-
+// ========= AddRecord ===========
+.add-record {
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

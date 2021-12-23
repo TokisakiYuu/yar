@@ -23,7 +23,8 @@ $toolbarHeight: 50px;
   .toolbar {
     height: $toolbarHeight;
     bottom: 0;
-    background-color: blue;
+    background: rgb(223 223 223 / 30%);
+    backdrop-filter: blur(6px);
   }
   .content-wrapper {
     height: inherit;

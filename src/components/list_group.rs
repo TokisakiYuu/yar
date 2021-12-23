@@ -27,11 +27,18 @@ impl Component for ItemGroup {
                     <div class="extra">{ "extra" }</div>
                 </div>
                 <div class="group-list">
-                    <div class="item">{ "item" }</div>
-                    <div class="item">{ "item" }</div>
-                    <div class="item">{ "item" }</div>
-                    <div class="item">{ "item" }</div>
-                    <div class="item">{ "item" }</div>
+                    <div class="item">
+                        <div class="content">{ "item" }</div>
+                    </div>
+                    <div class="item">
+                        <div class="content">{ "item" }</div>
+                    </div>
+                    <div class="item">
+                        <div class="content">{ "item" }</div>
+                    </div>
+                    <div class="item">
+                        <div class="content">{ "item" }</div>
+                    </div>
                 </div>
             </div>
         }
