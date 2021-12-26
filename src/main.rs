@@ -62,8 +62,7 @@ impl Component for Model {
         html! {
             <div class="main">
                 <div class="header">
-                    <div>{ "title" }</div>
-                    <div>{ "dashboard" }</div>
+                    <Header />
                 </div>
                 <div class="content-wrapper">
                     <div class="content">

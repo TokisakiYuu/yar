@@ -16,8 +16,19 @@ impl Component for Header {
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
         html! {
-            <div>
-                {"header"}
+            <div class="header_component">
+                <div class="title">
+                    <span>{ "YAR" }</span>
+                </div>
+                <div class="shortcut">
+                    <div class="item">{ "早餐" }</div>
+                    <div class="item">{ "午餐" }</div>
+                    <div class="item">{ "晚餐" }</div>
+                    <div class="item">{ "白条还款" }</div>
+                    <div class="item">{ "饮料" }</div>
+                    <div class="item">{ "地铁充值" }</div>
+                    <div class="item">{ "口罩" }</div>
+                </div>
             </div>
         }
     }

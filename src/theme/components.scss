@@ -47,3 +47,35 @@ $headerHeight: 3em;
   justify-content: center;
   align-items: center;
 }
+
+// ========= Header =============
+.header_component {
+  .title {
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    height: 42px;
+  }
+  .shortcut {
+    height: 30px;
+    padding: 0 vars.$contentHorizontalPadding;
+    overflow-x: scroll;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    &::-webkit-scrollbar {
+      height: 0;
+    }
+    .item {
+      height: inherit;
+      background-color: yellow;
+      border-radius: 4px;
+      line-height: 30px;
+      padding: 0 8px;
+    }
+  }
+}
